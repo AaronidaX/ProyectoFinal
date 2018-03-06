@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Trivial</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/styless.css">
+	<link rel="shortcut icon" href="http://www.iconj.com/ico/q/j/qjq8hiof0d.ico" type="image/x-icon" />
+	<script src="js/trivial.js" charset="utf-8"></script>
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">AnimeWorld</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="seguimiento.html">Seguimiento</a></li>
+					<li class="active"><a href="trivial.html">Trivial</a></li>
+					<li><a href="autentificaciones.html">Sugerencias</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="shonen.html">Animes
+							<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="shonen.html">Shonen</a></li>
+								<li><a href="seinen.html">Seinen</a></li>
+								<li><a href="cyberpunk.html">Cyberpunk</a></li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="formulario.html"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar2">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div>
+					<div class="collapse navbar-collapse" id="myNavbar2">
+						<ul class="nav navbar-nav">
+							<li><a href="#Trivial">Trivial</a></li>
+							<li><a href="#CambiarFondo">Cambiar Fondo</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div id="Trivial" class="container-fluid">
+			<ul class="list-group" id="lista-de-canciones">
+				<!-- Aqui van las canciones -->
+
+			</ul>
+
+			<audio controls id="audio">
+				<source id="cancion" src="audio/the-cyborg-fights.mp3" type="audio/mpeg">
+					Your browser does not support the audio tag.
+				</audio>
+
+				<h2 class="bordito2 centrar" id="preg"></h2>
+				<input class="center-block" type="text" id="dato">
+				<span class="centrar" id="intro">¡Al menos inténtalo!</span>
+				<button class="center-block" id="boton">Siguiente Pregunta</button>
+				<button class="center-block" onclick="reiniciar()">Reiniciar</button>
+				<p class="bordito2 centrar" id="resolucion"></p>
+				<img src="img/animes.jpg" alt="animes" class="img-responsive esquinas">
+			</div>
+			<div id="CambiarFondo" class="container-fluid">
+				<button class="btn nada center-block" onclick="fondo()"><img class="peque" src="img/change.png" alt="change"></button>
+				<p class="centrar bordito2">Dale al botón de arriba si deseas cambiar el fondo</p>
+			</div>
+		</body>

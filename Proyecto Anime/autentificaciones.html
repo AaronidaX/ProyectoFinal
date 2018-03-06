@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auntentificación</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+  <script src="js/autentificacion.js"></script>
+  <link rel="stylesheet" href="css/styless.css">
+  <link rel="shortcut icon" href="http://www.iconj.com/ico/q/j/qjq8hiof0d.ico" type="image/x-icon" />
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">AnimeWorld</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="seguimiento.html">Seguimiento</a></li>
+          <li><a href="trivial.html">Trivial</a></li>
+          <li class="active"><a href="autentificaciones.html">Sugerencias</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="shonen.html">Animes
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="shonen.html">Shonen</a></li>
+                <li><a href="seinen.html">Seinen</a></li>
+                <li><a href="cyberpunk.html">Cyberpunk</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="formulario.html"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container espacio2">
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <form class="form-login" id="form-login">
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="pwd" placeholder="Contraseña">
+            </div>
+            <div class="centrar">
+              <button type="submit" id="login"><img src="img/login.png" alt="Login" width="50" height="50"></button>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+      <div class="row">
+        <br>
+        <h4 class="bordito4" id="texto">Prueba a loguearte con admin@admin.es y 123123 si quieres entrar como administrador.
+          Si quieres entrar como usuario normal usa user@user.es y 123123.</h4>
+        </div>
+        <div class="row" id="panel-admin">
+          <div class="col-sm-5" id="btn-admin">
+            <h4 class="bordito4 centrar">Administrador</h4>
+            <input class="botones" type="image" src="img/admin.png" alt="Admin" width="200" height="200">
+          </div>
+          <div class="col-sm-2" id="logout">
+            <h4 class="bordito4 centrar">Salir</h4>
+            <input type="image" src="img/salir.png" alt="logout" width="200" height="200">
+          </div>
+          <div class="col-sm-5" id="btn-user">
+            <h4 class="bordito4 centrar">Usuario</h4>
+            <input class="botones" type="image" src="img/user.png" alt="User" width="200" height="200">
+          </div>
+        </div>
+      </div>
+    </body>
+    </html>

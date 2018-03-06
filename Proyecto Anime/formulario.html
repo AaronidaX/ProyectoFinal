@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/styless.css">
+  <link rel="shortcut icon" href="http://www.iconj.com/ico/q/j/qjq8hiof0d.ico" type="image/x-icon" />
+  <script src="js/formulario.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">AnimeWorld</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="seguimiento.html">Seguimiento</a></li>
+          <li><a href="trivial.html">Trivial</a></li>
+          <li><a href="autentificaciones.html">Sugerencias</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="shonen.html">Animes
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="shonen.html">Shonen</a></li>
+                <li><a href="seinen.html">Seinen</a></li>
+                <li><a href="cyberpunk.html">Cyberpunk</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="formulario.html"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </nav>
+
+    <div class="container">
+      <form class="form-horizontal" action="index.html" method="get" id="formulario">
+        <fieldset>
+
+          <!-- Título -->
+          <legend class="centrar bordito">Registro</legend>
+
+          <!-- Nombre -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Nombre">Nombre</label>
+            <div class="col-md-4">
+              <input id="Nombre" name="Nombre" placeholder="Nombre" class="form-control input-md" type="text">
+              <span class="error" id="error-nombre">Introduce tu nombre</span>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Email">Email</label>
+            <div class="col-md-4">
+              <input type="email" id="Email" name="Email" placeholder="Email" class="form-control input-md">
+              <span class="error" id="error-email">Introduce un email</span>
+            </div>
+          </div>
+
+          <!-- Contraseña -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Contraseña">Contraseña</label>
+            <div class="col-md-4">
+              <input id="Contraseña" name="Contraseña" placeholder="Contraseña" class="form-control input-md" type="password">
+              <span class="error" id="error-contrasenya">Introduce una contraseña</span>
+            </div>
+          </div>
+
+          <!-- Repetir -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Contraseña">Repite la contraseña</label>
+            <div class="col-md-4">
+              <input id="Repetir" name="Repetir" placeholder="Repite la contraseña" class="form-control input-md" type="password">
+              <span class="error" id="error-contra">Las contraseñas no coinciden</span>
+            </div>
+          </div>
+
+          <!-- Edad -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Edad">Edad</label>
+            <div class="col-md-4">
+              <input type="number" class="form-control" id="Edad" placeholder="Edad" name="Edad">
+              <span class="error" id="error-edad">Introduce una edad correcta</span>
+            </div>
+          </div>
+
+          <!-- Población -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Pais">País</label>
+            <div class="col-md-4">
+              <select id="Pais" class="form-control">
+                <option disabled selected value>País</option>
+                <option value="España">España</option>
+                <option value="Francia">Francia</option>
+                <option value="Alemania">Alemania</option>
+                <option value="Japón">Japón</option>
+              </select>
+              <span class="error" id="error-pais">Selecciona un País</span>
+            </div>
+          </div>
+
+          <!-- Sexo -->
+          <div class="form-group">
+            <label class="col-md-4 control-label">Género</label>
+            <div class="col-md-4">
+              <div class="radio">
+                <label for="radios0">
+                  <input name="radios" id="radios0" value="1" type="radio">
+                  Hombre
+                </label>
+              </div>
+              <div class="radio">
+                <label for="radios1">
+                  <input name="radios" id="radios1" value="2" type="radio">
+                  Mujer
+                </label>
+              </div>
+              <span class="error" id="error-sexo">Selecciona tu Género</span>
+            </div>
+          </div>
+
+          <!-- Teléfono -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="phone">Teléfono</label>
+            <div class="col-md-4">
+              <input type="tel" id="phone" name="tel" placeholder="Teléfono" class="form-control input-md">
+              <span class="error" id="error-phone">Introduce tu teléfono</span>
+            </div>
+          </div>
+
+          <!-- Multiples Casillas -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="checkbox"></label>
+            <div class="col-md-4">
+              <div class="checkbox">
+                <label for="checkbox">
+                  <input name="checkbox" id="checkbox" value="1" type="checkbox">
+                  Acepto los <a>términos de la pagina</a>
+                </label>
+              </div>
+              <span class="error" id="error-terminos">Acepta los términos de la página</span>
+            </div>
+          </div>
+
+          <br>
+
+          <!-- Doble botón -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="submit"></label>
+            <div class="col-md-8">
+              <button type="submit" id="submit" name="submit" class="btn btn-success">Enviar</button>
+              <button id="reset" name="reset" class="btn btn-danger" type="reset" value="reset">Reiniciar</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="container">
+      <h2 class="centrar bordito">¡Danos tu Feedback!</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Email</th>
+            <th>Opinión</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Aarón</td>
+            <td>Sánchez</td>
+            <td>Miranda</td>
+            <td>¡Paginón para Tiburcio!</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </body>
+  </html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animes</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/styless.css">
+  <script src="js/animes.js" charset="utf-8"></script>
+  <link rel="shortcut icon" href="http://www.iconj.com/ico/q/j/qjq8hiof0d.ico" type="image/x-icon" />
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">AnimeWorld</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="seguimiento.html">Seguimiento</a></li>
+          <li><a href="trivial.html">Trivial</a></li>
+          <li class="active"><a href="autentificaciones.html">Sugerencias</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="shonen.html">Animes
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="shonen.html">Shonen</a></li>
+                <li><a href="seinen.html">Seinen</a></li>
+                <li><a href="cyberpunk.html">Cyberpunk</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="formulario.html"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </nav>
+
+    <div class="container espacio">
+      <p class="centrar bordito2">¡Aquí podrás aportar tus animes favoritos!</p>
+      <div class="row">
+        <div class="col-sm-4">
+          <form id="formulario" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <label class="btn btn-file">
+                <input type="file" name="file" id="imagen" class="hidden" accept="image/*">
+                <img src="img/subir.png" alt="subir" class="img-responsive" width="150" height="150" id="imagenACambiar">
+                <span class="error" id="error-image">Selecciona una imagen a subir</span>
+              </label>
+            </div>
+            <div class="hidden" id="progreso">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" id="barra-de-progreso">
+                  <span class="sr-only">70% Completo</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="anime">Anime</label>
+              <input type="text" name="anime" value="" id="anime" class="form-control">
+              <span class="error" id="error-anime">Introduce un anime</span>
+            </div>
+            <div class="form-group">
+              <label for="autor">Autor</label>
+              <input type="text" name="autor" value="" id="autor" class="form-control">
+              <span class="error" id="error-autor">Introduce un autor</span>
+            </div>
+            <div class="form-group">
+              <label for="description">Descripción</label>
+              <input type="text" name="description" value="" id="description" class="form-control">
+              <span class="error" id="error-des">Introduce una descripción</span>
+            </div>
+            <br>
+            <!-- Email -->
+            <div class="row">
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="email">Email</label>
+                <div class="col-md-4">
+                  <input type="email" id="email" name="email" placeholder="email" class="form-control input-md">
+                  <span class="error" id="error-email">Introduce un email</span>
+                </div>
+              </div>
+            </div>
+            <br>
+            <!-- Fecha de Estreno -->
+            <div class="row">
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="fecha">Fecha de Estreno</label>
+                <div class="col-md-4">
+                  <input type="number" class="form-control" id="fecha" placeholder="fecha" name="fecha">
+                  <span class="error" id="error-fecha">Introduce una fecha correcta</span>
+                </div>
+              </div>
+            </div>
+            <br>
+            <!-- Género de anime -->
+            <div class="row">
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="genero">Género</label>
+                <div class="col-md-4">
+                  <select id="genero" class="form-control">
+                    <option disabled selected value>Género</option>
+                    <option value="Accion">Acción</option>
+                    <option value="Ciencia Ficcion">Ciencia Ficción</option>
+                    <option value="Deportes">Deportes</option>
+                    <option value="Espacial">Espacial</option>
+                    <option value="Infantil">Infantil</option>
+                    <option value="Mecha">Mecha</option>
+                    <option value="Parodia">Parodia</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Shounen">Shounen</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Artes Marciales">Artes Marciales</option>
+                    <option value="Comedia">Comedia</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Fantasia">Fantasía</option>
+                    <option value="Josei">Josei</option>
+                    <option value="Militar">Militar</option>
+                    <option value="Policia">Policía</option>
+                    <option value="Samurai">Samurai</option>
+                    <option value="Sobrenatural">Sobrenatural</option>
+                    <option value="Vampiros">Vampiros</option>
+                    <option value="Aventuras">Aventuras</option>
+                    <option value="Demencia">Demencia</option>
+                    <option value="Ecchi">Ecchi</option>
+                    <option value="Harem">Harem</option>
+                    <option value="Juegos">Juegos</option>
+                    <option value="Misterio">Misterio</option>
+                    <option value="Psicologico">Psicológico</option>
+                    <option value="Seinen">Seinen</option>
+                    <option value="Superpoderes">Superpoderes</option>
+                    <option value="Yaoi">Yaoi</option>
+                    <option value="Carreras">Carreras</option>
+                    <option value="Demonios">Demonios</option>
+                    <option value="Escolares">Escolares</option>
+                    <option value="Historico">Historico</option>
+                    <option value="Magia">Magia</option>
+                    <option value="Musica">Música</option>
+                    <option value="Shoujo">Shoujo</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Yuri">Yuri</option>
+                  </select>
+                  <span class="error" id="error-genero">Selecciona un género</span>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="form-group">
+              <label>Recomendado</label>
+              <label>
+                <input id="recomendado" type="radio" name="radio" value="Sí">Sí
+              </label>
+              <label>
+                <input id="norecomendado" type="radio" name="radio" value="No">No
+              </label>
+              <span class="error" id="error-rec">No has seleccionado ninguna opción</span>
+            </div>
+            <button type="submit" name="button" id="enviar">Enviar</button>
+          </form>
+        </div>
+        <div class="col-sm-8" id="animes">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="text-center bordito3"></th>
+                <th class="text-center bordito3">Portada</th>
+                <th class="text-center bordito3">Anime</th>
+                <th class="text-center bordito3">Autor</th>
+                <th class="text-center bordito3">Descripción</th>
+                <th class="text-center bordito3">Email</th>
+                <th class="text-center bordito3">Estreno</th>
+                <th class="text-center bordito3">Género</th>
+                <th class="text-center bordito3">Recomendado</th>
+              </tr>
+            </thead>
+            <tbody id="tabla" class="text-center"></tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+
+  <div class="container espacio">
+    <p class="centrar bordito2">¡Crea tu propio RSS!</p>
+    <p class="centrar">¡Recuerda que antes necesitas crear un anime!</p>
+      <br>
+    <div class="row">
+      <div class="col-sm-6">
+    <form id="formularioRSS" method="post" enctype="multipart/form-data">
+    <div class="row">
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="desc">Descripción</label>
+        <div class="col-md-4">
+          <select id="desc" class="form-control">
+            <option disabled selected value>Descripción</option>
+          </select>
+          <span class="error" id="error-desc">Selecciona una descripción</span>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="titulo">Título</label>
+        <div class="col-md-4">
+          <select id="titulo" class="form-control">
+            <option disabled selected value>Título</option>
+          </select>
+          <span class="error" id="error-titulo">Selecciona un título</span>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="url">URL</label>
+        <div class="col-md-4">
+          <input type="text" id="url" name="url" placeholder="URL" class="form-control input-md">
+          <span class="error" id="error-url">Introduce una URL válida</span>
+        </div>
+      </div>
+    </div>
+    <button type="submit" name="button" id="enviarRSS">Crear RSS</button>
+    </form>
+  </div>
+  <div class="col-sm-6" id="RSS">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="text-center bordito3"></th>
+        <th class="text-center bordito3">Descripción</th>
+        <th class="text-center bordito3">Anime</th>
+        <th class="text-center bordito3">URL</th>
+      </tr>
+    </thead>
+    <tbody id="tablaRSS" class="text-center"></tbody>
+  </table>
+</div>
+    </div>
+      </div>
+
+
+
+  </body>
+  </html>

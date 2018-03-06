@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seguimiento</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/styless.css">
+  <link rel="shortcut icon" href="http://www.iconj.com/ico/q/j/qjq8hiof0d.ico" type="image/x-icon" />
+  <script src="js/tabla.js" charset="utf-8"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">AnimeWorld</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Inicio</a></li>
+          <li class="active"><a href="seguimiento.html">Seguimiento</a></li>
+          <li><a href="trivial.html">Trivial</a></li>
+          <li><a href="autentificaciones.html">Sugerencias</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="shonen.html">Animes
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="shonen.html">Shonen</a></li>
+                <li><a href="seinen.html">Seinen</a></li>
+                <li><a href="cyberpunk.html">Cyberpunk</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="formulario.html"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <h2 class="bordito centrar">¡Sigue aquí tus animes favoritos!</h2>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <form id="animes">
+            <div class="form-group">
+              <label for="anime" class="h3">Anime</label>
+              <input type="text" class="form-control" id="anime"/>
+              <span class="error" id="error-anime">Introduce un anime</span>
+            </div>
+            <div class="form-group">
+              <label for="capitulosvistos" class="h3">Capítulos vistos</label>
+              <input type="number" class="form-control" id="capitulosvistos"/>
+              <span class="error" id="error-capseen">Introduce los capítulos vistos</span>
+            </div>
+            <div class="form-group">
+              <label for="capitulospendientes" class="h3">Capítulos pendientes</label>
+              <input type="number" class="form-control" id="capitulospendientes"/>
+              <span class="error" id="error-cappend">Introduce los capítulos pendientes</span>
+            </div>
+            <div class="form-group">
+              <label for="temporadasvistas" class="h3">Temporadas vistas</label>
+              <input type="number" class="form-control" id="temporadasvistas"/>
+              <span class="error" id="error-tempseen">Introduce las temporadas vistas</span>
+            </div>
+            <div class="form-group">
+              <label for="temporadaspendientes" class="h3">Temporadas pendientes</label>
+              <input type="number" class="form-control" id="temporadaspendientes"/>
+              <span class="error" id="error-tempend">Introduce las temporadas pendientes</span>
+            </div>
+            <div class="form-group">
+              <label for="genero" class="h3">Género</label>
+              <input type="text" class="form-control" id="genero"/>
+              <span class="error" id="error-gen">Introduce el género del anime</span>
+            </div>
+            <div class="form-group">
+              <label for="duracioncaps" class="h3">Duración de los capítulos</label>
+              <input type="number" class="form-control" id="duracioncaps"/>
+              <span class="error" id="error-duracioncaps">Introduce la duración de los capítulos</span>
+            </div>
+            <div class="form-group">
+              <label for="capitulosportemp" class="h3">Capítulos por temporada</label>
+              <input type="number" class="form-control" id="capitulosportemp"/>
+              <span class="error" id="error-capstemp">Introduce los capítulos por temporada</span>
+            </div>
+            <div class="form-group">
+              <label for="anyodeestreno" class="h3">Año de estreno</label>
+              <input type="number" class="form-control" id="anyodeestreno"/>
+              <span class="error" id="error-anyo">Introduce el año de estreno</span>
+            </div>
+            <div class="form-group">
+              <label for="estado" class="h3">En emisión o finalizada</label>
+              <input type="text" class="form-control" id="estado"/>
+              <span class="error" id="error-estado">Introduce el estado del anime</span>
+            </div>
+            <input class="center-block" type="submit" value="Añadir anime"/>
+          </form>
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <h2 class="centrar">Tus animes</h2>
+            <div id="tabla">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="text-center">Animes</th>
+                    <th class="text-center">Cap. vistos</th>
+                    <th class="text-center">Cap. pendientes</th>
+                    <th class="text-center">Temp. vistas</th>
+                    <th class="text-center">Temp. pendientes</th>
+                    <th class="text-center">Género</th>
+                    <th class="text-center">Duración cap.</th>
+                    <th class="text-center">Cap. temporada</th>
+                    <th class="text-center">Año</th>
+                    <th class="text-center">Estado</th>
+                  </tr>
+                </thead>
+                <tbody id="tusanimes" class="text-center"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>
